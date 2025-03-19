@@ -1,0 +1,93 @@
+<mat-card class="tractor-form-card">
+    <mat-card-title>🚜 Tractor Registration Form</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="tractorForm" (ngSubmit)="onSubmit()">
+        
+        <mat-grid-list cols="2" rowHeight="90px" gutterSize="16px">
+              <!-- Tractor Name -->
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Driver Name</mat-label>
+              <input matInput formControlName="driverName" required>
+            </mat-form-field>
+          </mat-grid-tile>
+          <!-- Tractor Name -->
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Tractor Name</mat-label>
+              <input matInput formControlName="tractorName" required>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Phone Number</mat-label>
+              <input matInput formControlName="phoneNumber" required>
+            </mat-form-field>
+          </mat-grid-tile>
+          <!-- Model -->
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Model</mat-label>
+              <input matInput formControlName="model" required>
+            </mat-form-field>
+          </mat-grid-tile>
+  
+          <!-- License Number -->
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>License Number</mat-label>
+              <input matInput formControlName="licenseNumber" required>
+            </mat-form-field>
+          </mat-grid-tile>
+            <!-- yEAR -->
+            <mat-grid-tile>
+                <mat-form-field appearance="outline" class="full-width">
+                  <mat-label>Year</mat-label>
+                  <input matInput formControlName="year" required>
+                </mat-form-field>
+              </mat-grid-tile>
+  
+          <!-- Rental Price -->
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Rental Price per Hour</mat-label>
+              <input matInput type="number" formControlName="rentalPrice" required>
+            </mat-form-field>
+          </mat-grid-tile>
+  
+          <!-- Location -->
+          <mat-grid-tile >
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Location</mat-label>
+              <input matInput formControlName="location" required>
+            </mat-form-field>
+            <button mat-button color="primary" type="button" (click)="fetchLocation()">📍 Get Location</button>
+          </mat-grid-tile>
+  
+          <!-- Availability -->
+          <mat-grid-tile >
+            <div class="availability-container">
+              <mat-slide-toggle formControlName="availability">Available</mat-slide-toggle>
+            </div>
+          </mat-grid-tile>
+  
+          <!-- Image Upload -->
+          <mat-grid-tile >
+            <div class="image-upload">
+              <label>📸 Upload Images</label>
+              <input type="file" (change)="onFileSelected($event)" multiple>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+  
+        <!-- Submit Button -->
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit" >
+            🚜 Register Tractor
+          </button>
+        </div>
+  
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
